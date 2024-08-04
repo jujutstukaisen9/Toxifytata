@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^m3u.m3u$  m3u.php
+RewriteRule ^([^/]+)\.mpd$ mpd.php?id=$1 [QSA,L]
+RewriteRule ^([^/]+)\.key$ tpck.php?id=$1 [QSA,L]
